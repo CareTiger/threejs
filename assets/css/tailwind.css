@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* subtract the header and footer heights */
+.my-content-height {
+    min-height: calc(100vh - theme("spacing.24") - theme("spacing.24"));
+}
+
+.btn {
+    @apply text-sm lg:text-base font-medium rounded-full py-2 px-4 lg:py-3 lg:px-5 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+}
+
+.btn-primary {
+    @apply bg-green-500 text-white;
+}
+
+.btn-secondary {
+    @apply bg-slate-300 text-slate-900;
+}
+
+.my-input {
+    @apply block w-full rounded-full py-2 px-4 lg:py-3 lg:px-5 border border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm text-black;
+}
+
+/* dropdown navbar height and active classes */
+/* height of navbar is screen size minus header height */
+.navbarHeight {
+    min-height: calc(100vh - theme("spacing.14"));
+}
+.navbarActive {
+    @apply block navbarHeight visible bg-slate-100 dark:bg-slate-800;
+}
+
+/* TODO check the breakpoints for tailwind css and set the max/min heights */
+/* site wide active link colors */
+/* home route and active route will hightlight */
+@media screen and (max-width: 600px) {
+    a.router-link-active {
+        @apply font-extrabold text-green-400;
+    }
+    /* exact link will show the primary color for only the exact matching link 
+        a.router-link-exact-active {} */
+}
+@media screen and (min-width: 600px) {
+    a.router-link-active {
+        @apply font-bold text-green-400;
+    }
+    /* exact link will show the primary color for only the exact matching link 
+        a.router-link-exact-active {} */
+}
